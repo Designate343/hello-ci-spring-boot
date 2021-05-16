@@ -22,13 +22,14 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      # FIXME: want to run tests everytime, but deploy only on commits to master
       - run:
           name: Build Docker image
           command: docker build -t $IMAGE_NAME:latest .
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
-            echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+            echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin
             docker push $IMAGE_NAME:latest
 
 workflows:
