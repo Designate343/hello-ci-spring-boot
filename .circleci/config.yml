@@ -34,10 +34,10 @@ jobs:
 
 workflows:
   version: 2
-  build-master:
+  main:
     jobs:
       - build-deploy:
           filters:
             branches:
-              only: master
+              only: main
           context: docker-hub
