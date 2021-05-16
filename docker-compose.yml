@@ -1,0 +1,13 @@
+version: "2"  # optional since v1.27.0
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+  database:
+    image: mariadb
+    ports:
+        - "3306:3306"
+    environment: 
+        - MARIADB_ROOT_PASSWORD=secret
+        - MARIAB_DATABASE=example
