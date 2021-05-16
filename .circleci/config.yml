@@ -40,3 +40,5 @@ workflows:
         filters:
             branches:
               only: master
+        context:
+          - docker-hub
