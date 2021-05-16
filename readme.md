@@ -2,7 +2,9 @@ Just a stub service for investigating docker/kubernetes/CI etc.
 
 To run 
 
-## Option 1: `docker-compose up` 
+## Option 1: 
+
+`docker-compose up` 
 
 Requests on localhost:8080
 
